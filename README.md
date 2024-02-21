@@ -1,2 +1,2 @@
-# Aplicaciones-Web-Interactivas
-Repositorio para la materia de Aplicaciones-Web-Interactivas
+# Aplicaciones-Web-Escalables
+Repositorio para la materia de Aplicaciones-Web-Escalables

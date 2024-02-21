@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './contador.component.css'
 })
 export class ContadorComponent {
-
+  public contador : Number = 100;
+  
 }

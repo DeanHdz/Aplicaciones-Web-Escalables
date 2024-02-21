@@ -11,5 +11,5 @@ import { ImagenComponent } from './imagen/imagen.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'proyecto1';
+  public titulo : string ="Mi nueva aplicacion de angular";
 }

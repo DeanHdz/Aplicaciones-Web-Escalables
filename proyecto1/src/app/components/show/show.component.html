@@ -1,0 +1,6 @@
+<div class="card">
+    <p>{{tvShow.title}}</p>
+    <img [src]="tvShow.image" alt="">
+    <p>Episodios: {{tvShow.episodes}}</p>
+    <p *ngIf="tvShow.year>=2000"> Año: {{tvShow.year}}</p>
+</div>

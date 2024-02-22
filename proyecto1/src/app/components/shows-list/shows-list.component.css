@@ -1,26 +1,6 @@
-img{
-    height: 50px;
-    width: 50px;
-}
-
 #container{
     display: flex;
     flex-wrap: wrap;
-}
-
-.card{
-    width: 200px;
-    margin: 10px;
-}
-
-img {
-    width: 200px;
-    height: 200px;
-}
-
-p {
-    height: 20px;
-    text-align: center;
 }
 
 h1 {

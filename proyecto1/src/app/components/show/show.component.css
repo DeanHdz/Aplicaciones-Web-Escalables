@@ -1,0 +1,14 @@
+.card{
+    width: 200px;
+    margin: 10px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+p {
+    height: 20px;
+    text-align: center;
+}

@@ -1,10 +1,5 @@
-<h1>Programas de televisión</h1>
+<h1 *ngIf="tvShows.length>0">Programas de televisión</h1>
 
 <div id="container">
-    <div class="card" *ngFor="let show of tvShows">
-        <p>{{show.title}}</p>
-        <img [src]="show.image" alt="">
-        <p>Episodios: {{show.episodes}}</p>
-        <p *ngIf="show.year>=2000"> Año: {{show.year}}</p>
-    </div>
+    <app-show *ngFor="let show of tvShows" [tvShow]="show"></app-show>
 </div>

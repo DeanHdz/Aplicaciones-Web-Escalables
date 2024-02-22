@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './imagen.component.css'
 })
 export class ImagenComponent {
-
+  public imgSrc : string = "https://picsum.photos/200/300";
+  public imgAlt : string = "Imagen de prueba";
 }

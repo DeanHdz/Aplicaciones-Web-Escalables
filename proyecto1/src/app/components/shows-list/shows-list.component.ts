@@ -1,5 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { Show } from '../../interfaces/show.interface';
 
 @Component({
   selector: 'app-shows-list',
@@ -9,7 +10,7 @@ import { Component } from '@angular/core';
   styleUrl: './shows-list.component.css'
 })
 export class ShowsListComponent {
-  public tvShows : any[] = [{
+  public tvShows : Show[] = [{
     "title": "Adventure Time",
     "year": 2010,
     "episodes": 289,

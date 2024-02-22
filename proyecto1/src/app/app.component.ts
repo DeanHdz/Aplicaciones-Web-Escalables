@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ContadorComponent } from './contador/contador.component';
-import { ImagenComponent } from './imagen/imagen.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { ContentComponent } from './content/content.component';
-import { ShowsListComponent } from './shows-list/shows-list.component';
+import { ContadorComponent } from './components/contador/contador.component';
+import { ImagenComponent } from './components/imagen/imagen.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContentComponent } from './components/content/content.component';
+import { ShowsListComponent } from './components/shows-list/shows-list.component';
 
 @Component({
   selector: 'app-root',

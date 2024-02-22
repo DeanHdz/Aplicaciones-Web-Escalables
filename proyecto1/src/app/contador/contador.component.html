@@ -1,4 +1,17 @@
 <h1>Contador component</h1>
 <p>Contador: {{contador}}</p>
-<button (click)="incrementa(10)">+10</button>
-<button (click)="decrementa(10)">-10</button>
+<button *ngIf="contador>0" (click)="incrementa()">+1</button>
+<button *ngIf="contador<20"  (click)="decrementa()">-1</button>
+
+<ul>
+    <li *ngFor="let nombre of nombres; index as i">{{i+1}} - {{nombre}}</li>
+</ul>
+
+<ol>
+    <li>Roberto</li>
+    <li>Carlos</li>
+    <li>Maria</li>
+    <li>Juan</li>
+</ol>
+
+<button *ngFor="let nombre of nombres"> {{nombre}} </button>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Show } from '../../interfaces/show.interface';
 import { NgIf } from '@angular/common';
 
@@ -18,4 +18,10 @@ export class ShowComponent {
     title: '',
     year: 0
   };
+
+  @Output() remove: EventEmitter<number> = new EventEmitter<number>();
+
+  removeCard(): void {
+    this.remove.emit(this.tvShow.id);
+  }
 }

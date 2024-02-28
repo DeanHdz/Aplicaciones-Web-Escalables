@@ -1,4 +1,2 @@
-<app-shows-list [tvShows]="tvShows1"></app-shows-list>
-<app-shows-list [tvShows]="tvShows2"></app-shows-list>
-<app-shows-list></app-shows-list>
-<app-show [tvShow]="singularShow"></app-show>
+<app-control (invertListEvent)="executeInvertList()"></app-control>
+<app-shows-list #showsList [tvShows]="tvShows"></app-shows-list>

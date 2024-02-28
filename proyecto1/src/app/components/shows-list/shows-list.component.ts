@@ -13,4 +13,12 @@ import { ShowComponent } from '../show/show.component';
 export class ShowsListComponent {
   @Input()
   public tvShows : Show[] = []; //Por defecto esta vacio
+
+  removeShow(showId: number): void {
+    this.tvShows = this.tvShows.filter(show => show.id !== showId);
+  }
+
+  invertList(): void {
+    this.tvShows = this.tvShows.reverse();
+  }
 }

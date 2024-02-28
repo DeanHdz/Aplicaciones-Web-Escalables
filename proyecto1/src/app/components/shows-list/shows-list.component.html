@@ -1,5 +1,7 @@
 <h1 *ngIf="tvShows.length>0">Programas de televisión</h1>
 
 <div id="container">
-    <app-show *ngFor="let show of tvShows" [tvShow]="show"></app-show>
+    <div *ngFor="let show of tvShows">
+        <app-show [tvShow]="show" (remove)="removeShow($event)"></app-show>
+    </div>
 </div>

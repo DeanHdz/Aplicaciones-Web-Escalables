@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ContadorComponent } from './components/contador/contador.component';
 import { ImagenComponent } from './components/imagen/imagen.component';
@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContentComponent } from './components/content/content.component';
 import { ShowsListComponent } from './components/shows-list/shows-list.component';
+import { ControlComponent } from './control/control.component';
 
 import { Show } from './interfaces/show.interface';
 import { ShowComponent } from './components/show/show.component';
@@ -13,20 +14,14 @@ import { ShowComponent } from './components/show/show.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ContadorComponent, ImagenComponent, HeaderComponent, FooterComponent, ContentComponent, ShowsListComponent, ShowComponent],
+  imports: [RouterOutlet, ContadorComponent, ImagenComponent, HeaderComponent, FooterComponent, ContentComponent, ShowsListComponent, ShowComponent, ControlComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   public titulo : string ="Mi nueva aplicacion de angular";
-  public singularShow : Show = {
-    "title": "Yu-Gi-Oh!",
-    "year": 2000,
-    "episodes": 225,
-    "image": "https://m.media-amazon.com/images/M/MV5BMDM0MDA3NzYtMDE1MS00YjZmLWJmNjQtNzgxYzlhMmMyZjQ2XkEyXkFqcGdeQXVyNjk1Njg5NTA@._V1_SY1000_CR0,0,701,1000_AL_.jpg",
-    "id": 9
-  }
-  public tvShows1 : Show[] = [{
+
+  public tvShows : Show[] = [{
     "title": "My Little Pony: Friendship is Magic",
     "year": 2010,
     "episodes": 235,
@@ -50,8 +45,7 @@ export class AppComponent {
     "episodes": 50,
     "image": "https://m.media-amazon.com/images/M/MV5BZjFkZDkwYjktMmZkNi00ZTVkLWI5ZmItZWI2MmI1NjQ1Y2U0XkEyXkFqcGdeQXVyOTg4MDk3MTQ@._V1_SY1000_CR0,0,666,1000_AL_.jpg",
     "id": 14
-  }];
-  public tvShows2 : Show[] = [{
+  },{
     "title": "Adventure Time",
     "year": 2010,
     "episodes": 289,
@@ -76,4 +70,12 @@ export class AppComponent {
     "image": "https://i.kinja-img.com/gawker-media/image/upload/t_original/lseuxpzwkntjf0coatv2.jpg",
     "id": 10
   }];
+
+  @ViewChild('showsList') showsListComponent: ShowsListComponent;
+
+  constructor() { this.showsListComponent = new ShowsListComponent(); }
+
+  executeInvertList(): void {
+    this.showsListComponent.invertList();
+  }
 }

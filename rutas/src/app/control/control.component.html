@@ -1,0 +1,7 @@
+<button (click)="onClickSetAll()">Seleccionar todos</button>
+<button (click)="onClickUnsetAll()">Deseleccionar todos</button>
+<input type="text" [(ngModel)]="searchTerm">
+{{searchTerm}} <!-- Escribir en pantalla lo que vamos escribiendo -->
+<button (click)="onClickSearch()">Buscar</button>
+
+<button (click)="invertList()">Invertir Lista</button>

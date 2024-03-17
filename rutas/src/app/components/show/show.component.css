@@ -1,0 +1,21 @@
+.card{
+    width: 200px;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.selected{
+    background-color: beige;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+p {
+    height: 20px;
+    text-align: center;
+}

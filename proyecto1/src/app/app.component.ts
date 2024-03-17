@@ -78,4 +78,8 @@ export class AppComponent {
   executeInvertList(): void {
     this.showsListComponent.invertList();
   }
+
+  public setAllAs( value : boolean) : void{
+    this.tvShows.forEach(item => item.isSelected = value);
+  }
 }

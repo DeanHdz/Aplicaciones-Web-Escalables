@@ -28,6 +28,6 @@ export class ShowComponent {
   public selected: boolean = false;
 
   public onSelect() : void{
-    this.selected = !this.selected;
+    this.tvShow.isSelected = !this.tvShow.isSelected;
   }
 }

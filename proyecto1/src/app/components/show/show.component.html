@@ -1,4 +1,4 @@
-<div class="card" [ngClass]="{'selected': selected}" (click)="onSelect()">
+<div class="card" [ngClass]="{'selected': tvShow.isSelected}" (click)="onSelect()">
     <button (click)="removeCard()">X</button>
     <p>{{tvShow.title}}</p>
     <img [src]="tvShow.image" alt="">

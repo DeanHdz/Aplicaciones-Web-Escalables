@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Show } from '../../interfaces/show.interface';
-import { NgIf } from '@angular/common';
+import { NgIf, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-show',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, NgClass],
   templateUrl: './show.component.html',
   styleUrl: './show.component.css'
 })
@@ -23,5 +23,11 @@ export class ShowComponent {
 
   removeCard(): void {
     this.remove.emit(this.tvShow.id);
+  }
+
+  public selected: boolean = false;
+
+  public onSelect() : void{
+    this.selected = !this.selected;
   }
 }

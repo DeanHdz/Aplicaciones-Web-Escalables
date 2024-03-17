@@ -1,7 +1,7 @@
-<div class="card">
+<div class="card" [ngClass]="{'selected': selected}" (click)="onSelect()">
     <button (click)="removeCard()">X</button>
     <p>{{tvShow.title}}</p>
     <img [src]="tvShow.image" alt="">
     <p>Episodios: {{tvShow.episodes}}</p>
-    <p *ngIf="tvShow.year>=2000"> Año: {{tvShow.year}}</p>
+    <p> Año: {{tvShow.year}}</p>
 </div>

@@ -71,6 +71,8 @@ export class AppComponent {
     "id": 10
   }];
 
+  public tvShows2: Show[] = this.tvShows;
+
   @ViewChild('showsList') showsListComponent: ShowsListComponent;
 
   constructor() { this.showsListComponent = new ShowsListComponent(); }
@@ -81,5 +83,9 @@ export class AppComponent {
 
   public setAllAs( value : boolean) : void{
     this.tvShows.forEach(item => item.isSelected = value);
+  }
+
+  public searchByTerm( value : string) : void{
+    this.tvShows = this.tvShows2.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
   }
 }

@@ -1,5 +1,5 @@
 <button (click)="setAllAs(true)">Seleccionar todos</button>
 <button (click)="setAllAs(false)">Deseleccionar todos</button>
 
-<app-control (setAllAs)="setAllAs($event)" (invertListEvent)="executeInvertList()"></app-control>
+<app-control (setAllAs)="setAllAs($event)" (onSearch)="searchByTerm($event)" (invertListEvent)="executeInvertList()"></app-control>
 <app-shows-list #showsList [tvShows]="tvShows"></app-shows-list>

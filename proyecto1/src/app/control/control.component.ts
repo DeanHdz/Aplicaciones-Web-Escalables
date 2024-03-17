@@ -9,13 +9,17 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ControlComponent {
   @Output() invertListEvent: EventEmitter<void> = new EventEmitter<void>();
+  @Output() setAllAs: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  invertList(): void {
+  public invertList(): void {
     this.invertListEvent.emit();
   }
 
-  public setAllAs( value : boolean) : void{
-    //Desde el control, no se tiene como hijo a los shows, por lo que se debe emitir un evento para que el padre lo maneje. Se ve en la siguiente clase
-    //this.tvShows.forEach(item => item.isSelected = value);
+  public onClickSetAll(): void {
+    this.setAllAs.emit(true);
+  }
+
+  public onClickUnsetAll(): void {
+    this.setAllAs.emit(false);
   }
 }

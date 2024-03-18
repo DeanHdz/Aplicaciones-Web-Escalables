@@ -71,4 +71,8 @@ export class TvShowsService {
   public setAllAs(value: boolean): void {
     this.tvShows.forEach(item => item.isSelected = value);
   }
+
+  public searchByTerm(value: string): void {
+    this.tvShows = this.tvShows.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
+  }
 }

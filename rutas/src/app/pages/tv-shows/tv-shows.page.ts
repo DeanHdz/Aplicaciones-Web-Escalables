@@ -27,8 +27,6 @@ export class TvShowsPage {
 
   public titulo: string = "Mi nueva aplicacion de angular";
 
-  public tvShows2: Show[] = this.tvShows;
-
   @ViewChild('showsList') showsListComponent: ShowsListComponent;
 
   executeInvertList(): void {
@@ -40,7 +38,7 @@ export class TvShowsPage {
   }
 
   public searchByTerm(value: string): void {
-    this.tvShows2 = this.tvShows.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
+    this.tvShowsService.searchByTerm(value);
   }
 
   public get tvShows() : Show[]{

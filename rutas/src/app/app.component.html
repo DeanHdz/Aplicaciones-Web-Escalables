@@ -5,10 +5,11 @@
 -->
 
 <!-- Tiene que importar Router link en app para funcionar, esto evita refrescar la pagina-->
-<a routerLink="./home">Home</a> <br>
-<a routerLink="./about">About</a> <br>
-<a routerLink="./contact">Contact</a> <br>
-<a routerLink="./tvshow">Tv Shows</a> <br>
-
+<nav>
+    <a routerLink="./home" routerLinkActive="active">Home</a> <br>
+    <a routerLink="./about" routerLinkActive="active">About</a> <br>
+    <a routerLink="./contact" routerLinkActive="active">Contact</a> <br>
+    <a routerLink="./tvshow" routerLinkActive="active">Tv Shows</a> <br>
+</nav>
 
 <router-outlet></router-outlet>

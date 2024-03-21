@@ -1,8 +1,17 @@
+require('dotenv').config(); //Utilizar en paquete de dotenv
+
 const express = require('express');
+
 const app = express();
+const port = process.env.PORT;
+const ruta = process.env.RUTA;
 
 app.get("/", function(req, res){
     res.send("Hola mundo");
+});
+
+app.get(ruta, function(req, res){
+    res.send("Hola mundo desde mi ruta");
 });
 
 app.get("/hola-mundo", function(req, res){
@@ -21,4 +30,4 @@ app.post("*", function (req, res){
     res.send("Ruta no encontrada");
 });
 
-app.listen(8080);
+app.listen(port);

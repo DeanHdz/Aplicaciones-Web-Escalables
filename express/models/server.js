@@ -11,26 +11,31 @@ class Server {
     routes() {
 
         this.app.get("/", function (req, res) {
-            //res.send("Hola a todos");
-            res.json({
+            res.status(200).json({
                 msg: "API GET /",
             });
         });
 
         this.app.get("/hola-mundo", function (req, res) {
-            res.json({ msg: "Hola desde una ruta diferente" });
+            res.status(200).json({ msg: "Hola desde una ruta diferente" });
         });
 
         this.app.get("*", function (req, res) {
-            res.json({ msg: "Ruta no encontrada" });
+            res.status(404).json({
+                msg: "Error ruta no encontrada",
+            });
         });
 
         this.app.post("/", function (req, res) {
-            res.json({ msg: "hola mundo a traves de un post" });
+            res.status(200).json({
+                msg: "API POST /",
+            });
         });
 
         this.app.post("*", function (req, res) {
-            res.json({ msg: "Ruta no encontrada" });
+            res.status(404).json({
+                msg: "Error ruta no encontrada",
+            });
         });
 
     }

@@ -5,30 +5,20 @@ class Server {
         this.app = express();
         this.port = process.env.PORT;
 
+        this.usersPath = "/api/users";
+        this.tvshowsPath = "/api/tvshows";
+
         this.routes();
     }
 
     routes() {
 
-        this.app.get("/", function (req, res) {
-            res.status(200).json({
-                msg: "API GET /",
-            });
-        });
-
-        this.app.get("/hola-mundo", function (req, res) {
-            res.status(200).json({ msg: "Hola desde una ruta diferente" });
-        });
+        this.app.use(this.usersPath, require("../routes/users"));
+        this.app.use(this.tvshowsPath, require("../routes/tvshows"));
 
         this.app.get("*", function (req, res) {
             res.status(404).json({
                 msg: "Error ruta no encontrada",
-            });
-        });
-
-        this.app.post("/", function (req, res) {
-            res.status(200).json({
-                msg: "API POST /",
             });
         });
 

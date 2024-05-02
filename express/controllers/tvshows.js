@@ -2,9 +2,10 @@ const { request, response } = require('express'); //Incluimos express para poder
 const TvShow = require('../models/tvshow'); //Incluimos el modelo de tvshow
 
 const getTvshows = (req = request, res = response) => {
-    const params = req.query; //Obtener parametros de la url, ejemplo: /tvshows?name=rick&status=alive
+    const { searchTerm } = req.query; //Obtener parametros de la url, ejemplo: /tvshows?name=rick&status=alive
 
-    TvShow.find().then(
+    //Para filtrar con campos extra en find, agregar un coma y el campo a filtrar
+    TvShow.find({ title: RegExp(searchTerm) }).then(
       (result) => {
         res.status(200).json({
             msg: "API tvshows GET /",
@@ -16,6 +17,24 @@ const getTvshows = (req = request, res = response) => {
             result: []
         });
     });
+}
+
+const getTvshowById = (req = request, res = response) => {
+
+    const { id } = req.params; //Obtener parametros de la url, ejemplo: /tvshows/123
+    
+    TvShow.findOne({ id: id }).then(
+        (result) => {
+            res.status(200).json({
+                msg: "API tvshows GET /:id",
+                result
+            });
+        }).catch((error) => {
+            res.status(500).json({
+                msg: "Error al obtener los datos de tvshows",
+                result: null
+            });
+        });
 }
 
 const createTvshows = (req = request, res = response) => {
@@ -45,6 +64,7 @@ const deleteTvshows = (req = request, res = response) => {
 
 module.exports = {
     getTvshows,
+    getTvshowById,
     createTvshows,
     updateTvshow,
     deleteTvshows

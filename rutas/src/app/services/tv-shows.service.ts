@@ -25,12 +25,13 @@ export class TvShowsService {
   }
 
   public searchByTerm(value: string): void {
-    this.tvShows = this.tvShows.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
+    //this.tvShows = this.tvShows.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
+    this.fetchTvShows(value);
   }
 
   //Hacer peticion a proyecto de "express", es necesario correr el proyecto simultaneamente
-  public fetchTvShows(): void {
-    this.http.get("http://localhost:8080/api/tvshows").subscribe({
+  public fetchTvShows(searchTerm = ""): void {
+    this.http.get("http://localhost:8080/api/tvshows?searchTerm="+searchTerm).subscribe({
       next: (response : any) => {
         console.log(response);
         this.tvShows = response.result;

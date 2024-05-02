@@ -1,29 +1,14 @@
 const { Router } = require('express');
+const { getTvshows, createTvshows, updateTvshows, deleteTvshows } = require('../controllers/tvshows');
 
 const router = Router();
 
-router.get("/", function (req, res) {
-    res.status(200).json({
-        msg: "API tvshows GET /",
-    });
-});
+router.get("/", getTvshows);
 
-router.post("/", function (req, res) {
-    res.status(200).json({
-        msg: "API tvshows POST /",
-    });
-});
+router.post("/", createTvshows);
 
-router.put("/", function (req, res) {
-    res.status(200).json({
-        msg: "API tvshows PUT /",
-    });
-});
+router.put("/", updateTvshows);
 
-router.delete("/", function (req, res) {
-    res.status(200).json({
-        msg: "API tvshows DELETE /",
-    });
-});
+router.delete("/", deleteTvshows);
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { getTvshows, createTvshows, updateTvshows, deleteTvshows } = require('../controllers/tvshows');
+const { getTvshows, createTvshows, updateTvshow, deleteTvshows } = require('../controllers/tvshows');
 
 const router = Router();
 
@@ -7,7 +7,7 @@ router.get("/", getTvshows);
 
 router.post("/", createTvshows);
 
-router.put("/", updateTvshows);
+router.put("/:id", updateTvshow);
 
 router.delete("/", deleteTvshows);
 

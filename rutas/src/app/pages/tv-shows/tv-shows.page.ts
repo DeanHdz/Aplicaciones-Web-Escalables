@@ -22,6 +22,7 @@ import { TvShowsService } from '../../services/tv-shows.service';
 export class TvShowsPage {
 
   constructor(private tvShowsService : TvShowsService ) { 
+    this.tvShowsService.fetchTvShows();
     this.showsListComponent = new ShowsListComponent();
   }
 

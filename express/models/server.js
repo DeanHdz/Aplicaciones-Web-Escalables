@@ -1,16 +1,19 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
+        this.connection_string = process.env.CONNECTION_STRING;
 
         this.usersPath = "/api/users";
         this.tvshowsPath = "/api/tvshows";
 
         this.middlewares();
         this.routes();
+        this.db();
     }
 
     routes() {
@@ -43,6 +46,18 @@ class Server {
         this.app.listen(this.port, () => {
             console.log(`Servidor corriendo en el puerto ${this.port}`);
         });
+    }
+
+    db(){
+        mongoose.connect(this.connection_string).then(
+            () => {
+            console.log("Conectado a la base de datos");
+            }
+        ).catch(
+            (error) => {
+                console.log("Error al conectar a la base de datos", error);
+            }
+        )
     }
 }
 

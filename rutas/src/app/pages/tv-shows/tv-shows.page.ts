@@ -23,7 +23,7 @@ export class TvShowsPage {
 
   constructor(private tvShowsService : TvShowsService ) { 
     this.tvShowsService.fetchTvShows();
-    this.showsListComponent = new ShowsListComponent();
+    this.showsListComponent = new ShowsListComponent(tvShowsService);
   }
 
   public titulo: string = "Mi nueva aplicacion de angular";

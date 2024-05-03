@@ -41,4 +41,43 @@ export class TvShowsService {
       }
     });
   }
+
+  public addShow(show: Show): void {
+
+    this.http.post("http://localhost:8080/api/tvshows", show).subscribe({
+      next: (response : any) => {
+        console.log(response);
+        this.tvShows.push(show);
+      },
+      error: (error : any) => {
+        console.log(error);
+      }
+    });
+  }
+
+  public removeShow(showId: Number): void {
+
+    this.http.delete("http://localhost:8080/api/tvshows/"+showId).subscribe({
+      next: (response : any) => {
+        console.log(response);
+        this.tvShows = this.tvShows.filter(item => item.id !== showId);
+      },
+      error: (error : any) => {
+        console.log(error);
+      }
+    });
+  }
+
+  public modifyShow(show: Show): void {
+    this.http.put("http://localhost:8080/api/tvshows/"+show.id, show).subscribe({
+      next: (response : any) => {
+        console.log(response);
+        this.tvShows = this.tvShows.map(item => item.id === show.id ? show : item);
+      },
+      error: (error : any) => {
+        console.log(error);
+      }
+    });
+  }
+
 }

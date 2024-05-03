@@ -5,3 +5,33 @@
 <button (click)="onClickSearch()">Buscar</button>
 
 <button (click)="invertList()">Invertir Lista</button>
+
+<div class="form-container">
+    <h1>Crear Show</h1>
+    <label for="create_id">ID</label>
+    <input type="number" [(ngModel)]="create_id">
+    <label for="create_title">Titulo</label>
+    <input type="text" [(ngModel)]="create_title">
+    <label for="create_year">Año</label>
+    <input type="number" [(ngModel)]="create_year">
+    <label for="create_episodes">Episodios</label>
+    <input type="number" [(ngModel)]="create_episodes">
+    <label for="create_image">URL de Imagen</label>
+    <input type="url" [(ngModel)]="create_image">
+    <button (click)="onClickCreateShow()">Crear</button>
+</div>
+
+<div class="form-container">
+    <h1>Modificar Show</h1>
+    <label for="modify_id">ID</label>
+    <input type="number" [(ngModel)]="modify_id">
+    <label for="modify_title">Titulo</label>
+    <input type="text" [(ngModel)]="modify_title">
+    <label for="modify_year">Año</label>
+    <input type="number" [(ngModel)]="modify_year">
+    <label for="modify_episodes">Episodios</label>
+    <input type="number" [(ngModel)]="modify_episodes">
+    <label for="modify_image">URL de Imagen</label>
+    <input type="url" [(ngModel)]="modify_image">
+    <button (click)="onClickModifyShow()">Modificar</button>
+</div>

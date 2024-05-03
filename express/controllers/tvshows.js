@@ -37,7 +37,7 @@ const getTvshowById = (req = request, res = response) => {
         });
 }
 
-const createTvshows = (req = request, res = response) => {
+const createTvshow = (req = request, res = response) => {
     const { title, year, episodes, image, id } = req.body;
 
     if(!title || !year || !episodes || !image || !id) {
@@ -108,7 +108,7 @@ const deleteTvshow = (req = request, res = response) => {
 module.exports = {
     getTvshows,
     getTvshowById,
-    createTvshows,
+    createTvshow,
     updateTvshow,
     deleteTvshow
 }

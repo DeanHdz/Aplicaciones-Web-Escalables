@@ -1,7 +1,4 @@
 <h1>Programas de televisión</h1>
 
-<button (click)="setAllAs(true)">Seleccionar todos</button>
-<button (click)="setAllAs(false)">Deseleccionar todos</button>
-
 <app-control (invertListEvent)="executeInvertList()"></app-control>
 <app-shows-list #showsList [tvShows]="tvShows"></app-shows-list>

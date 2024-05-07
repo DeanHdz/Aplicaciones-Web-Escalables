@@ -10,6 +10,7 @@ class Server {
 
         this.usersPath = "/api/users";
         this.tvshowsPath = "/api/tvshows";
+        this.authPath = "/api/auth";
 
         this.middlewares();
         this.routes();
@@ -21,6 +22,7 @@ class Server {
         //Utilizar routes definidos en los archivos
         this.app.use(this.usersPath, require("../routes/users"));
         this.app.use(this.tvshowsPath, require("../routes/tvshows"));
+        this.app.use(this.authPath, require("../routes/auth"));
 
         //Responses para cuando no encuentra la ruta solicitada
         this.app.get("*", function (req, res) {

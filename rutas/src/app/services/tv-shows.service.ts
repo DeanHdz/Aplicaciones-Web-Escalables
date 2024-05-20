@@ -31,7 +31,12 @@ export class TvShowsService {
 
   //Hacer peticion a proyecto de "express", es necesario correr el proyecto simultaneamente
   public fetchTvShows(searchTerm = ""): void {
-    this.http.get("http://localhost:8080/api/tvshows?searchTerm="+searchTerm).subscribe({
+    const token = localStorage.getItem("auth_token") ?? ""; //Nada asegura si el token existe o no, se ponen 2 signos para que el valor sea "" si no existe
+    this.http.get("http://localhost:8080/api/tvshows?searchTerm="+searchTerm, {
+      headers: {
+        "Authorization": token
+      }
+    }).subscribe({
       next: (response : any) => {
         console.log(response);
         this.tvShows = response.result;

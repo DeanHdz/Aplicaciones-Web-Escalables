@@ -3,6 +3,7 @@ import { HomePage } from './pages/home/home.page';
 import { AboutPage } from './pages/about/about.page';
 import { ContactPage } from './pages/contact/contact.page';
 import { TvShowsPage } from './pages/tv-shows/tv-shows.page';
+import { LoginPage } from './pages/login/login.page';
 import { ErrorPage } from './pages/error/error.page';
 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
     {path: "about", component: AboutPage},
     {path: "contact", component: ContactPage},
     {path: "tvshow", component: TvShowsPage},
+    {path: "login", component: LoginPage},
     {path: "error", component: ErrorPage},
     {path: "**", redirectTo: "error", pathMatch: "full"}, //Lo mismo que lo anterior pero mejor
 ];

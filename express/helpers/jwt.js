@@ -7,8 +7,8 @@ const generateJWT = (id = '') => {
         jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '4h'}, 
             (error, token) => {
             if(error) {
-                console.log(err);
-                reject('No se pudo generar el token: ' + error);
+                console.log(error);
+                reject(error);
             }else{
                 resolve(token);
             }
